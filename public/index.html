@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    input, button { margin: 0.5rem; }
+  </style>
+</head>
+<body>
+ 
+
+  <div class="heading">
+    <h2>Create a Short URL</h2>
+  </div>
+  <br>
+  <div class="container">
+    <input type="text" id="url" placeholder="Enter URL" />
+  <input type="text" id="shortcode" placeholder="Custom Code (optional)" />
+  <input type="number" id="validity" placeholder="Validity in minutes" />
+  <button onclick="shorten()">Shorten</button>
+  <pre id="result">
+
+  </pre>
+  </div>
+
+  <script>
+   
+  // Step 3: Check login status
+  (async function checkAuth() {
+    const res = await fetch('/auth/status');
+    const data = await res.json();
+    if (!data.loggedIn) {
+      // Redirect to login if not authenticated
+      window.location.href = '/login.html';
+    }
+  })();
+
+
+
+    async function shorten() {
+      const url = document.getElementById('url').value;
+      const shortcode = document.getElementById('shortcode').value;
+      const validity = document.getElementById('validity').value;
+
+      const res = await fetch('/shorturls', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url, shortcode, validity })
+      });
+
+      const data = await res.json();
+      document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>

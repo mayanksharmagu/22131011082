@@ -1,0 +1,88 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f8;
+  /* display: flex;
+  justify-content: center; */
+  
+  min-height: 100px;
+  padding: 3rem;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  margin-left: 500px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  margin-top: 1.5rem;
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  font-family: monospace;
+  color: #333;
+}
+#result {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  transition: background-color 0.3s ease;
+  word-wrap: break-word;
+}
+
+#result.success {
+  background-color: #e6ffed;
+  color: #256029;
+  border: 1px solid #b5e3c8;
+}
+
+
+
+
